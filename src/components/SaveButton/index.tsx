@@ -1,8 +1,12 @@
 import React from 'react';
 
-const SaveButton: React.FC = () => {
+type SaveButtonProps = { handleSave: () => void };
+const SaveButton: React.FC<SaveButtonProps> = ({ handleSave }) => {
   return (
-    <button className="flex items-center justify-center bg-white text-black rounded-lg w-[237px] h-[57px] justify-self-end mt-[28px]">
+    <button
+      onClick={handleSave}
+      className="flex items-center justify-center bg-white text-black rounded-lg w-[237px] h-[57px] justify-self-end mt-[28px]"
+    >
       Save
     </button>
   );

@@ -16,6 +16,11 @@ function App() {
     'Mixer',
     'Remixer',
   ];
+
+  const handleSave = () => {
+    console.log('searchData', searchData);
+    alert('Data saved successfully! Check console for details.');
+  };
   return (
     <div className="p-6 bg-[#191C1F] min-h-screen">
       <MusicTypeSelector />
@@ -29,7 +34,7 @@ function App() {
           />
         ))}
       </div>
-      <SaveButton />
+      <SaveButton handleSave={handleSave} />
     </div>
   );
 }

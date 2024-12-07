@@ -45,10 +45,15 @@ const FormSearchItem = (props: Props) => {
   };
 
   const handleContributorRemove = (contributorId: number) => {
-    setSelectedContributors(
-      selectedContributors.filter((c) => c.contributorId !== contributorId),
+    const updatedContributors = selectedContributors.filter(
+      (c: { contributorId: number }) => c.contributorId !== contributorId,
     );
+    setSelectedContributors(updatedContributors);
+    setSearchData((prev: any) => ({ ...prev, [role]: updatedContributors }));
+    setInputValue('');
+    setSearchResults(mockContributors);
   };
+
   return (
     <div className="flex flex-col bg-[#09090B] p-[13px]">
       <h2 className="text-sm">
@@ -69,5 +74,4 @@ const FormSearchItem = (props: Props) => {
     </div>
   );
 };
-
 export default FormSearchItem;
