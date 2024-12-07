@@ -4,8 +4,6 @@ import SaveButton from '@/components/SaveButton';
 import FormSearchItem from '@/components/FormSearchItem';
 
 function App() {
-  const [searchData, setSearchData] = useState({});
-
   const roleData = [
     'Main artist',
     'Featured artist',
@@ -17,13 +15,24 @@ function App() {
     'Remixer',
   ];
 
+  const musicTypes = ['Instrumental', 'Ballad', 'Rock'];
+  const [selectedType, setSelectedType] = useState<string>(musicTypes[0]);
+  const [searchData, setSearchData] = useState<any>({
+    musicType: selectedType,
+  });
+
   const handleSave = () => {
     console.log('searchData', searchData);
     alert('Data saved successfully! Check console for details.');
   };
   return (
     <div className="p-6 bg-[#191C1F] min-h-screen">
-      <MusicTypeSelector />
+      <MusicTypeSelector
+        setSelectedType={setSelectedType}
+        musicTypes={musicTypes}
+        selectedType={selectedType}
+        setSearchData={setSearchData}
+      />
       <div className="grid grid-cols-2 gap-4 mt-[26px]">
         {roleData.map((role, index) => (
           <FormSearchItem
