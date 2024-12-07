@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/inter-v18-latin-regular.woff2') format('woff2');
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    @apply text-[#6C7786] font-[600]
+}
