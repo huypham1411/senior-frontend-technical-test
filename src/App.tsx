@@ -33,8 +33,8 @@ function App() {
         selectedType={selectedType}
         setSearchData={setSearchData}
       />
-      <div className="grid grid-cols-2 gap-4 mt-[26px]">
-        {roleData.map((role, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[26px]">
+        {roleData?.map((role, index) => (
           <FormSearchItem
             key={index}
             role={role}

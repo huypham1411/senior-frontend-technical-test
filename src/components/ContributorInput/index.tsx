@@ -22,7 +22,7 @@ const ContributorInput: React.FC<ContributorInputProps> = ({
         <input
           type="text"
           placeholder="Typing name or id of artist here"
-          className="w-full border-[1px] border-[#1E1E21] rounded-[4px] bg-transparent h-[42px] pl-[38px]"
+          className="w-full border-[1px] border-[#1E1E21] rounded-[4px] bg-transparent h-[42px] pl-[38px] overflow-hidden text-ellipsis whitespace-nowrap pr-[110px] md:pr-0"
           value={inputValue}
           onChange={handleInputChange}
         />
